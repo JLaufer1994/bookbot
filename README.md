@@ -1,2 +1,3 @@
 # bookbot
-Boot.Dev book bot project designed to analyze novels
+
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
