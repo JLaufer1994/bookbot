@@ -1,6 +1,4 @@
-def get_book_text(path):
-    with open(path, 'r', encoding='utf-8') as f:
-        return f.read()
+from stats import get_book_text
 
 def main():
     book_text = get_book_text('books/frankenstein.txt')
