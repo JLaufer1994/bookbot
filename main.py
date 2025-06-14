@@ -1,11 +1,24 @@
-from stats import get_book_text
-
-def get_book_word_number(path):
-    book_text = get_book_text(path)
-    return len(book_text.split())
+from stats import get_book_text, count_words, count_characters, char_frequency
 
 def main():
-    num_words = get_book_word_number('books/frankenstein.txt')
-    print(str(num_words) + " words found in the document")
+    # Read the book text from file.
+    text = get_book_text('books/frankenstein.txt')
+    
+    # Count the number of words.
+    num_words = count_words(text)
+    
+    # Count the number of characters.
+    num_characters = count_characters(text)
+    
+    # Get the frequency of each character.
+    frequency = char_frequency(text)
+    
+    # Output all results.
+    print(f"{num_words} words found in the document")
+    print(f"{num_characters} characters found in the document")
+    print("Character frequency:")
+    for char, count in frequency.items():
+        print(f"'{char}': {count}")
 
-main()
+if __name__ == "__main__":
+    main()
