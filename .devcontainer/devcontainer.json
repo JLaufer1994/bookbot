@@ -1,9 +1,19 @@
 {
   "name": "python-bookbot",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli": {},
+    "ghcr.io/devcontainers/features/go:1": {},
+    "ghcr.io/flexwie/devcontainer-features/op:1": {},
+    "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {},
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+        "packages": "nala, lsd"
+    },
+    "ghcr.io/azutake/devcontainer-features/go-packages-install:0": {
+        "packages": "github.com/bootdotdev/bootdev@latest"
+    },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "username": "vscode",
       "installZsh": false
