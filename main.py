@@ -1,4 +1,6 @@
-from stats import get_book_text, count_words, count_characters, char_frequency
+from stats import (char_frequency, count_characters, count_words,
+                   get_book_text, sorted_char_frequency)
+
 
 def main():
     # Read the book text from file.
@@ -12,13 +14,22 @@ def main():
     
     # Get the frequency of each character.
     frequency = char_frequency(text)
+
+    # Sort the character frequency.
+    sorted_frequency = sorted_char_frequency(text)
     
     # Output all results.
-    print(f"{num_words} words found in the document")
-    print(f"{num_characters} characters found in the document")
-    print("Character frequency:")
-    for char, count in frequency.items():
-        print(f"'{char}': {count}")
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
+    print(f"Found {num_words} total words.")
+    print("-------- Character Count -------")
+    for item in sorted_frequency:
+          character = item['char']
+          count = item['num']
 
+          if character.isalpha():
+               print(f"{character}: {count}")
+    print("============= END ===============")
 if __name__ == "__main__":
     main()
